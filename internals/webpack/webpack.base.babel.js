@@ -94,6 +94,7 @@ module.exports = (options) => ({
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        GIPHY_API_KEY: JSON.stringify(process.env.GIPHY_API_KEY),
       },
     }),
     new webpack.NamedModulesPlugin(),
@@ -113,5 +114,8 @@ module.exports = (options) => ({
   },
   devtool: options.devtool,
   target: 'web', // Make web variables accessible to webpack, e.g. window
+  node: {
+    fs: 'empty',
+  },
   performance: options.performance || {},
 });

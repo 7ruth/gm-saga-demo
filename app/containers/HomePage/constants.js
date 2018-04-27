@@ -9,4 +9,6 @@
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
 
-export const CHANGE_USERNAME = 'boilerplate/Home/CHANGE_USERNAME';
+export const LOAD_GIPHY = 'gm-saga-demo/Home/LOAD_GIPHY';
+export const CHANGE_GIPHY_SRC = 'gm-saga-demo/Home/CHANGE_GIPHY_SRC';
+export const CHANGE_GIPHY_KEYWORD = 'gm-saga-demo/Home/CHANGE_GIPHY_KEYWORD';

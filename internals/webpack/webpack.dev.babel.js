@@ -12,6 +12,7 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 const logger = require('../../server/logger');
 const pkg = require(path.resolve(process.cwd(), 'package.json'));
 const dllPlugin = pkg.dllPlugin;
+const Dotenv = require('dotenv-webpack');
 
 const plugins = [
   new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading
@@ -23,6 +24,10 @@ const plugins = [
   new CircularDependencyPlugin({
     exclude: /a\.js|node_modules/, // exclude node_modules
     failOnError: false, // show a warning when there is a circular dependency
+  }),
+  new Dotenv({
+    path: './.env', // Path to .env file (this is the default);
+    systemvars: true,
   }),
 ];
 

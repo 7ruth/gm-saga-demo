@@ -16,19 +16,46 @@
  */
 
 import {
-  CHANGE_USERNAME,
+  CHANGE_GIPHY_KEYWORD,
+  CHANGE_GIPHY_SRC,
+  LOAD_GIPHY,
 } from './constants';
 
 /**
- * Changes the input field of the form
+ * Load giphy api, this action starts the request saga
  *
- * @param  {name} name The new text of the input field
- *
- * @return {object}    An action object with a type of CHANGE_USERNAME
+ * @return {object} An action object with a type of LOAD_GIPHY
  */
-export function changeUsername(name) {
+export function loadGiphy() {
   return {
-    type: CHANGE_USERNAME,
-    name,
+    type: LOAD_GIPHY,
+  };
+}
+
+/**
+ * Changes the src provided by giphy api
+ *
+ * @param  {url} url A url of a gif
+ *
+ * @return {object}    An action object with a type of CHANGE_GIPHY_SRC
+ */
+export function changeGiphySrc(url) {
+  return {
+    type: CHANGE_GIPHY_SRC,
+    url,
+  };
+}
+
+/**
+ * Changes the keyword provided by giphy random endpoint to display it to the front end
+ *
+ * @param  {keyword} keyword Giphy random keyword
+ *
+ * @return {object}    An action object with a type of CHANGE_GIPHY_KEYWORD
+ */
+export function changeGiphyKeyword(keyword) {
+  return {
+    type: CHANGE_GIPHY_KEYWORD,
+    keyword,
   };
 }

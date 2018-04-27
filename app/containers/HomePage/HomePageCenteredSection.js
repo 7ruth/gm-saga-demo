@@ -1,4 +1,4 @@
-import Section from './Section';
+import Section from './HomePageSection';
 
 const CenteredSection = Section.extend`
   text-align: center;
