@@ -24,6 +24,7 @@ export function* getGiphy() {
 
     yield put(changeGiphySrc(giphyResponse.data[0].images.original.url));
   } catch (err) {
+    // handle errors here
     // yield put(giphyLoadingError(err));
   }
 }
